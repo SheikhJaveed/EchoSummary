@@ -1,0 +1,152 @@
+/* Import a modern font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+:root {
+  /* Define colors for the dark theme */
+  --bg-color: #121212;
+  --card-bg-color: #1e1e1e;
+  --text-color: #e0e0e0;
+  --primary-color: #bb86fc; /* Retaining this for general use */
+  --border-color: #333;
+  --mono-bg-color: #2c2c2c;
+  --mono-text-color: #888;
+  --green-accent: rgb(129, 234, 84); /* New variable for the green color */
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  max-width: 720px;
+  margin: 40px auto;
+  padding: 0 16px;
+  line-height: 1.6;
+  
+  /* --- NEW: Subtle Gradient Background --- */
+  background: radial-gradient(circle at top, rgba(132, 195, 16, 0.1) 0%, transparent 60%), var(--bg-color);
+}
+
+h1 {
+  font-weight: 700;
+  color: var(--green-accent);
+  text-align: center;
+  font-size: 2.5em;
+  text-shadow: 0 0 10px rgba(132, 195, 16, 0.4);
+}
+
+p {
+  text-align: center;
+  font-size: 1.1em;
+  margin-top: 8px;
+  opacity: 0.8;
+}
+
+/* --- NEW: Typing Animation for the Description Text --- */
+.typewriter {
+  display: inline-block;      /* Important for width animation */
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid var(--green-accent); /* blinking cursor */
+  animation: typing 3s steps(60, end), blink-caret 0.75s step-end infinite;
+  font-size: 1.1em;
+  text-align: center;
+  max-width: 100%;            /* make responsive */
+}
+
+/* Typing animation */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* Blinking caret */
+@keyframes blink-caret {
+  0%, 100% { border-color: transparent; }
+  50% { border-color: var(--green-accent); }
+}
+.card {
+  background-color: var(--card-bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+}
+
+input[type=file] {
+  margin-top: 8px;
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 10px;
+  background-color: var(--mono-bg-color);
+  cursor: pointer;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+button {
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  background: var(--green-accent);
+  color: var(--bg-color);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  font-size: 1em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+button:hover {
+  background: #2a9e1b;
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.98);
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.result {
+  margin-top: 16px;
+  padding: 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--card-bg-color);
+}
+
+.result p {
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+
+.result a {
+  color: var(--green-accent);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.result a:hover {
+  color: #1da924;
+}
+
+.mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  background-color: var(--mono-bg-color);
+  color: var(--mono-text-color);
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 12px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
