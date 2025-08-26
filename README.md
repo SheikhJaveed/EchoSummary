@@ -1,5 +1,5 @@
 
-# AI Lecture Assistant (Speech → Notes → Google Doc)
+# EchoSummary (Speech → Notes → Google Doc)
 
 This is a minimal working prototype that:
 1) Accepts an audio file (lecture recording)
